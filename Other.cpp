@@ -36,6 +36,8 @@ string GBKToUTF8(const std::string& strGBK)
 }
 
 
-void Set_Command_To_Game() {
-
+void setcolor(unsigned short color)
+{
+	HANDLE hcon = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(hcon, color);
 }

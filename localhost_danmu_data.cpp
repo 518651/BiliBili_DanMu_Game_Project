@@ -7,7 +7,8 @@
 #include <WinSock2.h>
 #include<Windows.h>
 #pragma comment(lib, "ws2_32.lib")  //加载 ws2_32.dll
-using namespace std;
+
+DanMu_Data DanMu_Data_L;
 
 void Get_Data_Page_Information()
 {
@@ -48,6 +49,8 @@ void Get_Data_Page_Information()
 		char recvBuf[1024] = {};
 		recv(clientSocket, recvBuf, 1024, 0);
 		cout<< UTF8ToGBK(recvBuf) << endl << endl;
+		DanMu_Data_L.LostText = recvBuf;
+		cotrol_Thread(recvBuf);
 	}
 	//	6	关闭socket
 	closesocket(clientSocket);

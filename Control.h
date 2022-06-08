@@ -2,7 +2,7 @@
 #include<string>
 #include <json/json.h>
 #include <curl/curl.h>
-
+#include <Windows.h>
 
 using namespace std;
 
@@ -34,7 +34,7 @@ string Get_BililBili_DanMu();
 
 
 //解析弹幕数据
-BOOL analysis(string Json_data);
+int analysis(string Json_data);
 
 //http POST请求  
 CURLcode curl_post_req(const string& url, const string& postParams, string& response);
@@ -44,9 +44,12 @@ void Get_Data_Page_Information();
 
 
 //funtion
-void Set_Command_To_Game();
+void setcolor(unsigned short color);
 
+//多线程
+int cotrol_Thread(string data); 
 
+void input_funtion(int model);
 
 
 

@@ -150,9 +150,11 @@
     <ClCompile Include="analysis.cpp" />
     <ClCompile Include="Control.h" />
     <ClCompile Include="curl_Get_DanMu.cpp" />
+    <ClCompile Include="Funtion.cpp" />
     <ClCompile Include="localhost_danmu_data.cpp" />
     <ClCompile Include="Other.cpp" />
     <ClCompile Include="Runmain.cpp" />
+    <ClCompile Include="thread.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="resources\libcurl\lib\libcurl.lib" />
@@ -160,6 +162,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="root_certificates.hpp" />
+    <ClInclude Include="ThreadPool.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
