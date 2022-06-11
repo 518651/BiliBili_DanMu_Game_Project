@@ -147,8 +147,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="algorithm.cpp" />
     <ClCompile Include="analysis.cpp" />
-    <ClCompile Include="Control.h" />
     <ClCompile Include="curl_Get_DanMu.cpp" />
     <ClCompile Include="Funtion.cpp" />
     <ClCompile Include="localhost_danmu_data.cpp" />
@@ -161,8 +161,12 @@
     <Library Include="WsClientLib.lib" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="root_certificates.hpp" />
+    <ClInclude Include="Control.h" />
+    <ClInclude Include="setTimefuntion.h" />
     <ClInclude Include="ThreadPool.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\kmclassdll.dll" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

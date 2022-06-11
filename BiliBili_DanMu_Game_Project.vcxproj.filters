@@ -15,16 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Control.h">
-      <Filter>头文件</Filter>
-    </ClCompile>
-    <ClCompile Include="analysis.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Other.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="curl_Get_DanMu.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Runmain.cpp">
@@ -39,6 +30,15 @@
     <ClCompile Include="Funtion.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="analysis.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="curl_Get_DanMu.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="algorithm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="resources\libcurl\lib\libcurl.lib">
@@ -47,11 +47,17 @@
     <Library Include="WsClientLib.lib" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="root_certificates.hpp">
-      <Filter>源文件</Filter>
-    </ClInclude>
     <ClInclude Include="ThreadPool.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Control.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="setTimefuntion.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\kmclassdll.dll" />
   </ItemGroup>
 </Project>

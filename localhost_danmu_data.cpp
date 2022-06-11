@@ -5,10 +5,11 @@
 #include<cstring>
 #include<WS2tcpip.h>
 #include <WinSock2.h>
-#include<Windows.h>
 #pragma comment(lib, "ws2_32.lib")  //加载 ws2_32.dll
 
 DanMu_Data DanMu_Data_L;
+
+
 
 void Get_Data_Page_Information()
 {
@@ -30,11 +31,11 @@ void Get_Data_Page_Information()
 	}
 
 
-	//	3	绑定套接字	指定绑定的IP地址和端口号
+	//	3	绑定套接字	指定绑定的IP地址和端口号b
 	sockaddr_in socketAddr;
 	socketAddr.sin_family = PF_INET;
-	socketAddr.sin_addr.S_un.S_addr = inet_addr("127.0.0.1");
-	socketAddr.sin_port = htons(33333);
+	socketAddr.sin_addr.S_un.S_addr = inet_addr("127.0.0.1");//127.0.0.1  192.168.3.74
+	socketAddr.sin_port = htons(5555);
 	int cRes = connect(clientSocket, (SOCKADDR*)&socketAddr, sizeof(SOCKADDR));
 	if (SOCKET_ERROR == cRes) {
 		cout << "客户端:\t\t与服务器连接失败....." << endl;
@@ -42,15 +43,16 @@ void Get_Data_Page_Information()
 	else {
 		cout << "客户端:\t\t与服务器连接成功....." << endl;
 	}
-
+	
 	while (true)
 	{
 		//	5	发送/接受 数据
-		char recvBuf[1024] = {};
-		recv(clientSocket, recvBuf, 1024, 0);
-		cout<< UTF8ToGBK(recvBuf) << endl << endl;
-		DanMu_Data_L.LostText = recvBuf;
-		cotrol_Thread(recvBuf);
+		char recvBuf[4028] = {};
+		recv(clientSocket, recvBuf, 4028, 0);
+		//cout<< UTF8ToGBK(recvBuf) << endl << endl;
+		//danmu_funtion_data = recvBuf;
+		cotrol_Thread(python_data_analysis(UTF8ToGBK(recvBuf)));
+		//cotrol_Thread(recvBuf);
 	}
 	//	6	关闭socket
 	closesocket(clientSocket);
